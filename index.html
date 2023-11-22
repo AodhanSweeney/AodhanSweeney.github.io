@@ -85,9 +85,8 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   </a>
   <div class="w3-bar-block w3-center">
     <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-    <a href="#portfolio" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Portfolio</a>
-    <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+    <a href="#research" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Research</a>
+    <a href="#Miscellaneous" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Miscellaneous</a>
   </div>
 </nav>
 
@@ -99,38 +98,41 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
   <!-- Header -->
   <header class="w3-container w3-center" style="padding:128px 16px" id="home">
-    <h1 class="w3-jumbo"><b>Jane Doe</b></h1>
-    <p>Photographer and Web Designer.</p>
+    <h1 class="w3-jumbo"><b>Aodhan Sweeney-Jaramillo</b></h1>
+    <p>Graduate Student of Atmospheric Science & Data Science at University of Washington</p>
+    <p>NASA FINESST Fellow</p>
     <img src="/fotos/Headshot.png" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
     <img src="/fotos/Headshot.png" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
     <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
-      <i class="fa fa-download"></i> Download Resume
+      <i class="fa fa-download"></i> Download CV
     </button>
   </header>
 
   <!-- Portfolio Section -->
-  <div class="w3-padding-32 w3-content" id="portfolio">
-    <h2 class="w3-text-grey">My Portfolio</h2>
+  <div class="w3-padding-32 w3-content" id="research">
+    <h2 class="w3-text-grey">Research</h2>
     <hr class="w3-opacity">
-
-    <!-- Grid for photos -->
+  
+    <!-- Container with text on left and image on right -->
     <div class="w3-row-padding" style="margin:0 -16px">
       <div class="w3-half">
-        <img src="/w3images/wedding.jpg" style="width:100%">
-        <img src="/w3images/rocks.jpg" style="width:100%">
-        <img src="/w3images/sailboat.jpg" style="width:100%">
+        <div class="w3-container">
+          <h3>Separating Climate Change Signal and Noise Using Machine Learning</h3>
+          <p>Observed changes in the Earth's climate system may be due to 
+            increasing greenhouse gases, natural climate variability, or both. 
+            We use simple neural networks to separate the relative importance of these
+            sources. The figure on the left shows an example of this applied to 
+            Arctic Amplification (AA). It was found that while observed AA is 4.2 (shown 
+            in grey in top panel) from 1980-2022, 
+            after accounting for natural variability, this factor is closer to 3.0.</p>
+        </div>
       </div>
-
       <div class="w3-half">
-        <img src="/w3images/underwater.jpg" style="width:100%">
-        <img src="/w3images/chef.jpg" style="width:100%">
-        <img src="/w3images/wedding.jpg" style="width:100%">
-        <img src="/w3images/p6.jpg" style="width:100%">
+        <div class="w3-container">
+          <img src="/fotos/AA_figure.png" alt="AA_figure" style="width:100%">
+        </div>
       </div>
-    <!-- End photo grid -->
     </div>
-  <!-- End Portfolio Section -->
-  </div>
 
   <!-- About Section -->
   <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
