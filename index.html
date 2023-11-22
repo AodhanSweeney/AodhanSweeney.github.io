@@ -67,7 +67,7 @@
 
     const world = Globe()
       (document.getElementById('globeViz'))
-      .globeImageUrl('../AIRS_anom_maps/anomaly_map_2003_0.jpg')
+      .globeImageUrl('/AIRS_anom_maps/anomaly_map_2003_0.jpg')
     
     world.controls().autoRotate = true;
     world.controls().autoRotateSpeed = 1;
@@ -82,7 +82,7 @@
         } 
         if (frame % frameLimit === 0) {
             // make some changes then redraw animation
-            filename = '../AIRS_anom_maps/anomaly_map_' + df.toString() + '.jpg';
+            filename = '/AIRS_anom_maps/anomaly_map_' + df.toString() + '.jpg';
             world.globeImageUrl(filename);
             console.log(filename);
             df += 1;
