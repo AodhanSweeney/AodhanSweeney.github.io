@@ -1,0 +1,95 @@
+<style>
+    body {
+      margin: 0;
+      font-family: SansSerif;
+    }
+    #title_left {
+      position: absolute;
+      top: 300px;
+      left: 20px;
+      color: white;
+    }
+    #subtitle_left{
+      position: absolute;
+      top: 330px;
+      left: 20px;
+      color: white;
+    }
+    #subtitle_left1{
+      position: absolute;
+      top: 355px;
+      left: 20px;
+      color: white;
+    }
+    #subtitle_left2{
+      position: absolute;
+      top: 370px;
+      left: 20px;
+      color: white;
+    }
+
+
+   
+  </style>
+
+  <script src="//unpkg.com/three"></script>
+
+    <script src="//unpkg.com/globe.gl"></script>
+<!--  <script src="../../dist/globe.gl.js"></script>-->
+
+  <script src="//unpkg.com/solar-calculator"></script>
+
+
+
+  <div id="globeViz"></div>
+  <div id="title_left"></div>
+  <div id="subtitle_left"></div>
+  <div id="subtitle_left1"></div>
+  <div id="subtitle_left2"></div>
+
+  
+  <script>
+    let df = 0;
+    let frame = 0;
+    let frameLimit = 15;
+    const title_left_el = document.getElementById('title_left');
+    const subtitle_left_el = document.getElementById('subtitle_left');
+    const subtitle_left1_el = document.getElementById('subtitle_left1');
+    const subtitle_left2_el = document.getElementById('subtitle_left2');
+    title_left_el.textContent = 'Aodhan Sweeney-Jaramillo';
+    title_left_el.style.font = "italic bold 25px arial,serif";
+    subtitle_left_el.textContent = 'Graduate Student & NASA FINESST fellow';
+    subtitle_left1_el.textContent = 'This globe shows monthly surface temperature ';
+    subtitle_left2_el.textContent = 'from 2003-2022 using AIRS data. ';
+    subtitle_left_el.style.font = "15px arial,serif";
+    subtitle_left1_el.style.font = "15px arial,serif";
+    subtitle_left2_el.style.font = "15px arial,serif";
+
+    const world = Globe()
+      (document.getElementById('globeViz'))
+      .globeImageUrl('../AIRS_anom_maps/anomaly_map_2003_0.jpg')
+    
+    world.controls().autoRotate = true;
+    world.controls().autoRotateSpeed = 1;
+
+    // animate time of day
+    requestAnimationFrame(() =>
+      (function animate() {
+        //dt += VELOCITY * 60 * 1000;
+        frame++
+        if (df === 227) {
+            df = 0;
+        } 
+        if (frame % frameLimit === 0) {
+            // make some changes then redraw animation
+            filename = '../AIRS_anom_maps/anomaly_map_' + df.toString() + '.jpg';
+            world.globeImageUrl(filename);
+            console.log(filename);
+            df += 1;
+        } 
+      requestAnimationFrame(animate)
+      }
+        
+      )()
+    );
+  </script>
