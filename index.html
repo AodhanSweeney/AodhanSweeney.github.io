@@ -50,7 +50,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
     const world = Globe()
       (document.getElementById('globeViz'))
-      .globeImageUrl('AIRS_anomaly_maps/anomaly_map_0.jpg')
+      .globeImageUrl('AIRS_anomaly_maps/anomaly_map_0.png')
     
     world.controls().autoRotate = true;
     world.controls().autoRotateSpeed = 1;
@@ -65,7 +65,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
         } 
         if (frame % frameLimit === 0) {
             // make some changes then redraw animation
-            filename = 'AIRS_anomaly_maps/anomaly_map_' + df.toString() + '.jpg';
+            filename = 'AIRS_anomaly_maps/anomaly_map_' + df.toString() + '.png';
             world.globeImageUrl(filename);
             console.log(filename);
             df += 1;
